@@ -1,0 +1,1 @@
+export { Mantine } from './mantine';
