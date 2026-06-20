@@ -11,13 +11,20 @@
   "dependencies": {
     "@tanstack/react-query": "^5.101.0",
     "@tanstack/react-query-devtools": "^5.101.0",
+    "axios": "^1.18.0",
+    "lodash-es": "^4.18.1",
     "next": "16.2.7",
+    "next-intl": "^4.13.0",
+    "next-navigation-guard": "^0.2.0",
+    "nuqs": "^2.8.9",
+    "query-string": "^9.4.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/lodash-es": "^4.17.12",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -26,5 +33,10 @@
     "eslint-config-next": "16.2.7",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "next-navigation-guard": {
+      "next": "$next"
+    }
   }
 }

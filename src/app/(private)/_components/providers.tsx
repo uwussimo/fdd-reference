@@ -3,12 +3,15 @@ import { ReactNode } from 'react';
 import { Workstation } from '@/providers/data/workstation/server';
 import { Branch } from '@/providers/data/branch/server';
 
-import { FiscalServiceProvider as Fiscalization } from '@/providers/services/fiscalization/client';
-import { PermissionsServiceProvider as Permissions } from '@/providers/services/permissions/client';
-import { PrinterServiceProvider as Printer } from '@/providers/services/printer/client';
-import { SystemShiftServiceProvider as SystemShift } from '@/providers/services/system-shift/client';
-import { UpdateManagerServiceProvider as UpdateManager } from '@/providers/services/update-manager/client';
-import { TrackingServiceProvider as Tracking } from '@/providers/services/tracking/client';
+import { FiscalizationProvider as Fiscalization } from '@/providers/services/fiscalization/client';
+import { PermissionsManagerProvider as PermissionsManager } from '@/providers/services/permissions-manager/client';
+import { PrinterProvider as Printer } from '@/providers/services/printer/client';
+import { SystemShiftProvider as SystemShift } from '@/providers/services/system-shift/client';
+import { UpdateManagerProvider as UpdateManager } from '@/providers/services/update-manager/client';
+import { VitalsMonitorProvider as VitalsMonitor } from '@/providers/services/vitals-monitor/client';
+import { UsersManagerProvider as UsersManager } from '@/providers/services/users-manager/client';
+import { CustomerScreenProvider as CustomerScreen } from '@/providers/services/customer-screen/client';
+import { LicenseManagerProvider as LicenseManager } from '@/providers/services/license-manager/client';
 
 type ProvidersProps = {
   children: ReactNode;
@@ -38,17 +41,23 @@ const ServiceProviders = (props: ProvidersProps) => {
   const { children } = props;
 
   return (
-    <Tracking>
-      <Permissions>
-        <Fiscalization>
-          <Printer>
-            <SystemShift>
-              <UpdateManager>{children}</UpdateManager>
-            </SystemShift>
-          </Printer>
-        </Fiscalization>
-      </Permissions>
-    </Tracking>
+    <VitalsMonitor>
+      <LicenseManager>
+        <PermissionsManager>
+          <UpdateManager>
+            <UsersManager>
+              <Printer>
+                <Fiscalization>
+                  <SystemShift>
+                    <CustomerScreen>{children}</CustomerScreen>
+                  </SystemShift>
+                </Fiscalization>
+              </Printer>
+            </UsersManager>
+          </UpdateManager>
+        </PermissionsManager>
+      </LicenseManager>
+    </VitalsMonitor>
   );
 };
 
