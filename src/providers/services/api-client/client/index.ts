@@ -3,3 +3,5 @@
 export type { Interceptor } from '../shared/types';
 
 export { ApiClientProvider, useApiClient } from './provider';
+
+export { authInterceptor } from './interceptors/auth';

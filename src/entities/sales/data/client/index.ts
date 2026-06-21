@@ -1,1 +1,3 @@
-export * from '../shared/types';
+'use client';
+
+export * from './queries';
