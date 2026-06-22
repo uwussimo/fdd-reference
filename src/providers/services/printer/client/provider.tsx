@@ -3,6 +3,7 @@
 import { createContext, ReactNode, use, useState } from 'react';
 import { Printer } from './types';
 import { PrinterService } from './service';
+import { useDesktopApiClient } from '@/providers/services/desktop-api-client/client';
 
 const PrinterContext = createContext<Printer | null>(null);
 
@@ -15,7 +16,9 @@ type PrinterProviderProps = {
 export const PrinterProvider = (props: PrinterProviderProps) => {
   const { children } = props;
 
-  const [printerService] = useState(() => new PrinterService());
+  const desktopApiClient = useDesktopApiClient();
+
+  const [printerService] = useState(() => new PrinterService(desktopApiClient));
 
   return <PrinterContext value={printerService}>{children}</PrinterContext>;
 };

@@ -1,2 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export type DesktopApiClient = {};
+export type DesktopApiClient = {
+  printReceipt(receipt: unknown): Promise<void>;
+};

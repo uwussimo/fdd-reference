@@ -1,2 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export type Printer = {};
+export type Printer = {
+  print: (receipt: unknown) => Promise<void>;
+};

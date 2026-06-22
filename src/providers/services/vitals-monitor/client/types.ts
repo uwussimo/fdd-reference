@@ -1,2 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export type VitalsMonitor = {};
+export type VitalsMonitor = {
+  reportError: (error: Error) => void;
+};
