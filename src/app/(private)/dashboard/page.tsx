@@ -1,6 +1,6 @@
 'use client';
 
-import { useCheckout } from '@/processes/sales/use-checkout/client';
+import { useCheckout } from '@/processes/sales/checkout/client';
 import { CheckoutDrawer } from '@/entities/sales/components/checkout/client';
 
 const Page = () => {
