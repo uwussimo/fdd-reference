@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { NextIntlClientProvider as NextIntlClient } from 'next-intl';
+import { I18n } from '@/providers/lib/i18n/client';
 import { NuqsAdapter } from 'nuqs/adapters/next';
 import { NavigationGuardProvider as NavigationGuard } from 'next-navigation-guard';
 import { ReactQuery } from '@/providers/lib/react-query/client';
@@ -29,7 +29,7 @@ const LibProviders = (props: ProvidersProps) => {
   const { children } = props;
 
   return (
-    <NextIntlClient>
+    <I18n>
       <NuqsAdapter>
         <NavigationGuard>
           <ReactQuery>
@@ -37,7 +37,7 @@ const LibProviders = (props: ProvidersProps) => {
           </ReactQuery>
         </NavigationGuard>
       </NuqsAdapter>
-    </NextIntlClient>
+    </I18n>
   );
 };
 
