@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext, ReactNode, use, useEffect, useState } from 'react';
 
 import { ApiClient } from '../shared/types';

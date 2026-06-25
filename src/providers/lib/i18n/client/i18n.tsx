@@ -1,6 +1,8 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { ReactNode } from 'react';
 
+import { defaultLocale } from '../shared/config';
+
 type I18nProps = {
   children: ReactNode;
 };
@@ -8,5 +10,5 @@ type I18nProps = {
 export const I18n = (props: I18nProps) => {
   const { children } = props;
 
-  return <NextIntlClientProvider>{children}</NextIntlClientProvider>;
+  return <NextIntlClientProvider locale={defaultLocale}>{children}</NextIntlClientProvider>;
 };
